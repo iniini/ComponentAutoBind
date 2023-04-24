@@ -1,18 +1,3 @@
-**自动生成获取组件的代码**
-
-
-![图片](.me/1.png) 
-1. 选择物体
-2. 在需要绑定的组件上 右键--->AutoBind
-3. Ctrl+R刷新资，源编译生成的脚本
-
-
-层次结构：
-![图片层次](.me/2.png) 
-
-
-生成的脚本：
-``` C#
 namespace Game.UIManage
 {
     public partial class TestViewManager : UIFormLogic
@@ -38,27 +23,3 @@ namespace Game.UIManage
         }
     }
 }
-
-```
-UIFormLogic：
-``` C#
-using UnityEngine;
-
-namespace Game.UIManage
-{
-    public class UIFormLogic : MonoBehaviour
-    {
-
-        public Transform Content;
-        public void Awake()
-        {
-            Content = transform.Find("Content");
-        }
-        protected virtual void AutoBind()
-        {
-
-        }
-    }
-}
-```
-
