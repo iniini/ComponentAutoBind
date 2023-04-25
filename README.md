@@ -7,6 +7,10 @@
 3. Ctrl+R刷新资，源编译生成的脚本
 
 
+## **用法：**
+复制[ComponentAutoBindTool.cs](/Assets/Editor/ComponentAutoBindTool.cs)，到自己工程中的Editor目录下。根据自己需求修改脚本，代码生成路径和生成代码的模板，是直接写在脚本中的。
+
+## **效果：**
 层次结构：
 ![图片层次](.me/2.png) 
 
@@ -61,4 +65,5 @@ namespace Game.UIManage
     }
 }
 ```
+
 
