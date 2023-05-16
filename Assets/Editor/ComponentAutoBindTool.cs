@@ -13,17 +13,17 @@ public class ComponentAutoBindTool
 
     // C#文件模板，根据自身要求更改
     private const string Template =
-        "namespace Game.UIManage\n" +
-        "{\n" +
-        "    public partial class ##NAME## : UIFormLogic\n" +
-        "    {\n" +
-        "//##INSERTPROPERTY##\n" +
-        "        protected override void AutoBind()\n" +
-        "        {\n" +
-        "//##INSERTFUNCTION##\n" +
-        "        }\n" +
-        "    }\n" +
-        "}\n";
+        "namespace Game.UIManage\r\n" +
+        "{\r\n" +
+        "    public partial class ##NAME## : UIFormLogic\r\n" +
+        "    {\r\n" +
+        "//##INSERTPROPERTY##\r\n" +
+        "        protected override void AutoBind()\r\n" +
+        "        {\r\n" +
+        "//##INSERTFUNCTION##\r\n" +
+        "        }\r\n" +
+        "    }\r\n" +
+        "}\r\n";
 
     [MenuItem("CONTEXT/Component/AutoBind", false, 0)]
     public static void Bind(MenuCommand command)
@@ -68,12 +68,12 @@ public class ComponentAutoBindTool
         {
             name += suffix;
         }
-        string property = $"        private {component.GetType().FullName} {name};\n//##INSERTPROPERTY##\n";
-        Text = Text.Replace("//##INSERTPROPERTY##\n", property);
+        string property = $"        private {component.GetType().FullName} {name};\r\n//##INSERTPROPERTY##\r\n";
+        Text = Text.Replace("//##INSERTPROPERTY##\r\n", property);
 
         var str = GetPath(component.transform, root, Text, out var title);
-        string function = $"            {name} = {title}.Find(\"{str}\").GetComponent<{component.GetType().FullName}>();\n//##INSERTFUNCTION##\n";
-        Text = Text.Replace("//##INSERTFUNCTION##\n", function);
+        string function = $"            {name} = {title}.Find(\"{str}\").GetComponent<{component.GetType().FullName}>();\r\n//##INSERTFUNCTION##\r\n";
+        Text = Text.Replace("//##INSERTFUNCTION##\r\n", function);
 
         StreamWriter sw = new StreamWriter(path);
         sw.Write(Text);

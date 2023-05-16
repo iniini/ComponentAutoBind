@@ -11,6 +11,7 @@ namespace Game.UIManage
         public void Awake()
         {
             Content = transform.Find("Content");
+            AutoBind();
         }
         protected virtual void AutoBind()
         {
